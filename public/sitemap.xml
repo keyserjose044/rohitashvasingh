@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home -->
+  <url>
+    <loc>https://rohitashvasingh.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Research / Projects -->
+  <url>
+    <loc>https://rohitashvasingh.com/projects</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Publications -->
+  <url>
+    <loc>https://rohitashvasingh.com/publications</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- CV -->
+  <url>
+    <loc>https://rohitashvasingh.com/cv</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog (optional, depending on template structure) -->
+  <url>
+    <loc>https://rohitashvasingh.com/blog</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Photography (you will create this soon) -->
+  <url>
+    <loc>https://rohitashvasingh.com/photography</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://rohitashvasingh.com/contact</loc>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
