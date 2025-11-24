@@ -1,76 +1,77 @@
 ---
-interface TimelineElement {
-  time: string
-  title?: string
-  company?: string
-  school?: string
-  location?: string
-  description?: string
-}
+import { isExperience } from '@/types/cv';
 
-const { elements, colored = false } = Astro.props as {
-  elements: TimelineElement[]
-  colored?: boolean
-}
+// Keep typing loose so we can reuse this for Experiences, Education, Awards
+const { elements, colored } = Astro.props as {
+  elements: any[];
+  colored: boolean;
+};
 
-// Helper to pick the main heading text
-const getHeading = (el: TimelineElement) =>
-  el.title ?? el.company ?? el.school ?? ''
+// Main heading line (bold)
+const getHeading = (el: any) => {
+  if (isExperience(el)) return el.title;          // experience: job title
+  if ('degree' in el && el.degree) return el.degree; // education: degree
+  if ('title' in el && el.title) return el.title;    // awards: award title
+  return '';
+};
+
+// Organization / institution / issuer line
+const getOrg = (el: any) => {
+  if (isExperience(el)) return el.company;
+  if ('school' in el && el.school) return el.school;
+  if ('issuer' in el && el.issuer) return el.issuer; // awards: issuer
+  return '';
+};
 ---
 
-<ul class="timeline timeline-vertical w-full">
-  {elements.map((el, index) => {
-    const heading = getHeading(el)
-
-    return (
+<ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+  {
+    elements.map((element, index) => (
       <li>
-        {/* Top connector (except for first) */}
-        {index !== 0 && <hr />}
+        <div class="timeline-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class:list={[{ 'text-accent': colored }, 'h-5 w-5']}
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
 
-        {/* Dot */}
         <div
-          class:list={[
-            'timeline-middle flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold',
-            colored ? 'bg-secondary text-secondary-content' : 'bg-base-300 text-base-content',
-          ]}
+          class={`${index % 2 === 0 ? 'timeline-start' : 'timeline-end'} mb-10 md:text-end`}
         >
-          ✓
+          {/* time */}
+          {element.time && (
+            <time class="font-mono italic">
+              {element.time}
+            </time>
+          )}
+
+          {/* bold heading (job title / degree / award title) */}
+          {getHeading(element) && (
+            <div class="text-lg font-black">
+              {getHeading(element)}
+            </div>
+          )}
+
+          {/* org / school / issuer */}
+          {getOrg(element) && <div>{getOrg(element)}</div>}
+
+          {/* description */}
+          {element.description && <div>{element.description}</div>}
+
+          {/* location */}
+          {element.location && <div>{element.location}</div>}
         </div>
 
-        {/* Content */}
-        <div class="timeline-end mb-8">
-          {/* Time */}
-          {el.time && (
-            <p class="text-sm italic mb-1">
-              {el.time}
-            </p>
-          )}
-
-          {/* Title / main heading – this is what was missing for awards */}
-          {heading && (
-            <h3 class="text-lg font-semibold mb-1">
-              {heading}
-            </h3>
-          )}
-
-          {/* Location */}
-          {el.location && (
-            <p class="text-sm opacity-80 mb-1">
-              {el.location}
-            </p>
-          )}
-
-          {/* Description */}
-          {el.description && (
-            <p class="mt-2">
-              {el.description}
-            </p>
-          )}
-        </div>
-
-        {/* Bottom connector (except for last) */}
-        {index !== elements.length - 1 && <hr />}
+        <hr class:list={[{ 'bg-accent': colored }]} />
       </li>
-    )
-  })}
+    ))
+  }
 </ul>
