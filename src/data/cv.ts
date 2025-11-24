@@ -127,3 +127,21 @@ export const publications = [
       'Explores practical routes for integrating CO₂ capture and utilization technologies into ready-mix concrete production. Highlights the role of SCMs, nanomaterials, and carbon-negative additives such as biochar in increasing CO₂ uptake and influencing hydrate polymorphs, while outlining pathways toward carbon-neutral or carbon-reduced concrete mixtures.',
   },
 ];
+
+export const awards = [
+  {
+    title: 'Outstanding PhD Student Award',
+    issuer: 'Department of Civil Engineering, The University of Texas at Arlington',
+    time: '2023, 2024, 2025',
+    location: 'Arlington, TX, USA',
+    description:
+      'Recognized for excellence in research, academic performance, and contributions to the concrete materials group.',
+  },
+  {
+    title: '1st Place – ACI Research in Progress Competition',
+    issuer: 'American Concrete Institute (ACI)',
+    time: 'Spring 2025',
+    location: 'ACI Convention',
+    description:
+      'Awarded first place for a research-in-progress presentation on nano-reinforced, low-carbon cementitious composites.',
+  }
