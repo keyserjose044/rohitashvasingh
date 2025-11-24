@@ -62,5 +62,5 @@ export const seo = {
   default_title: 'Dr. Rohitashva K. Singh',
   default_description:
     'Portfolio of Dr. Rohitashva K. Singh, materials and structural engineer specializing in nano-reinforced cementitious composites, sustainable concrete, and durability.',
-  default_image: '/images/astro-academia.png',
+  default_image: '/images/rohitbanner.png',
 };
