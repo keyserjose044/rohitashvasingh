@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
-// Pull in DaisyUI’s built-in theme definitions
-const daisyuiThemes = require("daisyui/src/theming/themes");
+// Use DaisyUI's built-in themes as a base
+const themes = require("daisyui/src/theming/themes");
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -11,22 +11,23 @@ export default {
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     themes: [
-      // 🔴 Custom corporate theme (your light theme) with red secondary
+      // 🔴 Custom CORPORATE (light theme)
       {
         corporate: {
-          ...daisyuiThemes["corporate"],
-          secondary: "#dc2626", // roughly tailwind red-600
-        },
-      },
-      // 🔴 Custom dark theme with red secondary as well
-      {
-        dark: {
-          ...daisyuiThemes["dark"],
-          secondary: "#f97373", // a bit lighter red for dark mode (optional)
+          ...themes["corporate"],
+          secondary: "#dc2626", // red for text-secondary, btn-secondary, etc.
         },
       },
 
-      // The rest are just kept for reference / future reuse
+      // 🔴 Custom DARK
+      {
+        dark: {
+          ...themes["dark"],
+          secondary: "#f97373", // lighter red for dark mode (tweak if you like)
+        },
+      },
+
+      // All other themes just for future use / reference
       "light",
       "cupcake",
       "bumblebee",
@@ -59,5 +60,4 @@ export default {
       "sunset",
     ],
   },
-  // darkMode remains DaisyUI-based via data-theme; no need to enable here
 };
