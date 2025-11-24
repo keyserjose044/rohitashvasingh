@@ -1,6 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
-// Use DaisyUI's built-in themes as a base
 const themes = require("daisyui/src/theming/themes");
 
 export default {
@@ -11,27 +9,27 @@ export default {
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     themes: [
-      // 🔴 Custom CORPORATE (light theme)
+      // 👇 custom LIGHT theme (red secondary)
       {
-        corporate: {
-          ...themes["corporate"],
-          secondary: "#dc2626", // red for text-secondary, btn-secondary, etc.
+        light: {
+          ...themes["light"],
+          secondary: "#dc2626", // red-600
+          accent: "#dc2626",
         },
       },
-
-      // 🔴 Custom DARK
+      // 👇 custom DARK theme (already working, but keep it here)
       {
         dark: {
           ...themes["dark"],
-          secondary: "#f97373", // lighter red for dark mode (tweak if you like)
+          secondary: "#dc2626",
+          accent: "#dc2626",
         },
       },
 
-      // All other themes just for future use / reference
-      "light",
+      // other built-ins you might want available
       "cupcake",
-      "bumblebee",
       "emerald",
+      "corporate",
       "synthwave",
       "retro",
       "cyberpunk",
