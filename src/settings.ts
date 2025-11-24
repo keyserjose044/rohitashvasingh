@@ -50,7 +50,7 @@ export const template = {
   website_url: 'https://rohitashvasingh.com',
   menu_left: false,
   transitions: true,
-  lightTheme: 'corporate',
+  lightTheme: 'light',
   darkTheme: 'dark',
   excerptLength: 200,
   postPerPage: 5,
