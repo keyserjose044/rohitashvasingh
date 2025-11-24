@@ -86,7 +86,7 @@ export const publications = [
     authors: 'R. K. Singh et al.',
     journal: 'Cement and Concrete Composites',
     time: '2024',
-    link: '',
+    link: 'https://www.sciencedirect.com/science/article/abs/pii/S0958946525003555',
     abstract:
       'Proposes metakaolin–CNT blends as a strategy to mitigate alkali–silica reaction in concrete. The work shows that combining metakaolin with well-dispersed CNTs improves alkali binding and modifies the C-S-H composition in the interfacial transition zone, significantly reducing expansion below ASTM C1567 limits while preserving modulus and tensile energy absorption after ASR exposure.',
   },
@@ -95,7 +95,7 @@ export const publications = [
     authors: 'R. K. Singh et al.',
     journal: 'Construction and Building Materials',
     time: '2023',
-    link: '',
+    link: 'https://www.sciencedirect.com/science/article/abs/pii/S0950061823033238',
     abstract:
       'Investigates how small dosages of CNTs influence the mechanical response and microstructure of metakaolin-modified mortars. Results show substantial gains in flexural strength, Young’s modulus, and post-crack toughness when 0.1 wt% CNTs are added to 20% metakaolin mixes, linked to a denser ITZ and altered C-S-H chemistry with lower Ca/Si ratios.',
   },
@@ -104,7 +104,7 @@ export const publications = [
     authors: 'R. K. Singh et al.',
     journal: 'Springer (Book Chapter)',
     time: '2024',
-    link: '',
+    link: 'https://link.springer.com/chapter/10.1007/978-3-031-70145-0_21',
     abstract:
       'Evaluates hybrid reinforcement systems combining carbon nanofibers and polypropylene microfibers in cementitious composites. Using fracture mechanics tests on notched prisms, the study demonstrates large increases in critical stress intensity, fracture toughness, and toughness indices compared to single-scale reinforcement, and explains the multiscale crack-arrest mechanisms responsible for the improved performance.',
   },
@@ -113,7 +113,7 @@ export const publications = [
     authors: 'R. K. Singh et al.',
     journal: 'KSCE Journal of Civil Engineering',
     time: '2024',
-    link: '',
+    link: 'https://www.sciencedirect.com/science/article/pii/S1226798825003423',
     abstract:
       'Reviews current approaches to utilizing CO₂ within cementitious systems, including CO₂ curing, carbonation-activated SCMs, carbonated binders and aggregates, and injection of CO₂ into fresh concrete or mixing water. Discusses potential for simultaneous performance improvement and CO₂ sequestration, along with remaining challenges related to durability, process optimization, and large-scale deployment.',
   },
@@ -122,7 +122,7 @@ export const publications = [
     authors: 'R. K. Singh et al.',
     journal: 'BETON 2023 Ready Mixed Concrete Congress',
     time: '2023',
-    link: '',
+    link: 'https://www.thbbakademi.org/wp-content/uploads/2023/10/Carbon-Capture-and-Utilization-for-Ready-Mix-Concrete.pdf',
     abstract:
       'Explores practical routes for integrating CO₂ capture and utilization technologies into ready-mix concrete production. Highlights the role of SCMs, nanomaterials, and carbon-negative additives such as biochar in increasing CO₂ uptake and influencing hydrate polymorphs, while outlining pathways toward carbon-neutral or carbon-reduced concrete mixtures.',
   },
