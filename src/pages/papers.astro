@@ -2,9 +2,9 @@
 import Layout from "@/layouts/Layout.astro";
 import { publications } from "@/data/cv";
 import { highlightAuthor } from "@/lib/utils";
-import {template} from "@/settings";
+import { template } from "@/settings";
 
-const ALL_PAPERS = publications; // This will be replaced with dynamic data later
+const ALL_PAPERS = publications;
 ---
 
 <Layout title="Papers">
@@ -30,7 +30,10 @@ const ALL_PAPERS = publications; // This will be replaced with dynamic data late
               </p>
               <p class="text-sm text-base-content/80">{paper.abstract}</p>
               <div class="card-actions justify-end mt-4">
-                <a href={paper.link} class="btn btn-sm btn-secondary text-secondary-content">
+                <a
+                  href={paper.link}
+                  class="btn btn-sm btn-secondary text-secondary-content"
+                >
                   Read Paper
                 </a>
               </div>
@@ -38,16 +41,6 @@ const ALL_PAPERS = publications; // This will be replaced with dynamic data late
           </div>
         ))
       }
-    </div>
-
-    <div class="flex justify-center mt-8">
-      <div class="join">
-        <button class="join-item btn btn-sm">«</button>
-        <button class="join-item btn btn-sm">1</button>
-        <button class="join-item btn btn-sm btn-active">2</button>
-        <button class="join-item btn btn-sm">3</button>
-        <button class="join-item btn btn-sm">»</button>
-      </div>
     </div>
   </div>
 </Layout>
