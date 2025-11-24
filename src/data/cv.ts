@@ -145,3 +145,4 @@ export const awards = [
     description:
       'Awarded first place for a research-in-progress presentation on nano-reinforced, low-carbon cementitious composites.',
   }
+];
