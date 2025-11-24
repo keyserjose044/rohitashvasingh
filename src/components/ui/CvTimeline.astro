@@ -1,46 +1,76 @@
 ---
-import { isExperience } from '@/types/cv';
-import type { Experience, Education } from '@/types/cv';
-
-interface Props {
-	elements: (Experience | Education)[]
-	colored: boolean
+interface TimelineElement {
+  time: string
+  title?: string
+  company?: string
+  school?: string
+  location?: string
+  description?: string
 }
 
-const { elements, colored } = Astro.props
+const { elements, colored = false } = Astro.props as {
+  elements: TimelineElement[]
+  colored?: boolean
+}
+
+// Helper to pick the main heading text
+const getHeading = (el: TimelineElement) =>
+  el.title ?? el.company ?? el.school ?? ''
 ---
 
-<ul
-	class='timeline timeline-snap-icon max-md:timeline-compact timeline-vertical'
->
-	{
-		elements.map((element, index) => (
-			<li>
-				<div class='timeline-middle'>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						viewBox='0 0 20 20'
-						fill='currentColor'
-            class:list={[{ 'text-accent': colored }, 'h-5 w-5']}
-					>
-						<path
-							fill-rule='evenodd'
-							d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z'
-							clip-rule='evenodd'
-						/>
-					</svg>
-				</div>
-				<div
-					class={`${index % 2 === 0 ? 'timeline-start' : 'timeline-end'} mb-10 md:text-end`}
-				>
-					<time class='font-mono italic'>{element.time}</time>
-					<div class='text-lg font-black'>{isExperience(element) ? element.title : element.degree}</div>
-					<div>{element.description}</div>
-					<div>{isExperience(element) ? element.company : element.school}</div>
-					<div>{element.location}</div>
-				</div>
-        <hr class:list={[{ 'bg-accent': colored }]} />
-			</li>
-		))
-	}
+<ul class="timeline timeline-vertical w-full">
+  {elements.map((el, index) => {
+    const heading = getHeading(el)
+
+    return (
+      <li>
+        {/* Top connector (except for first) */}
+        {index !== 0 && <hr />}
+
+        {/* Dot */}
+        <div
+          class:list={[
+            'timeline-middle flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold',
+            colored ? 'bg-secondary text-secondary-content' : 'bg-base-300 text-base-content',
+          ]}
+        >
+          ✓
+        </div>
+
+        {/* Content */}
+        <div class="timeline-end mb-8">
+          {/* Time */}
+          {el.time && (
+            <p class="text-sm italic mb-1">
+              {el.time}
+            </p>
+          )}
+
+          {/* Title / main heading – this is what was missing for awards */}
+          {heading && (
+            <h3 class="text-lg font-semibold mb-1">
+              {heading}
+            </h3>
+          )}
+
+          {/* Location */}
+          {el.location && (
+            <p class="text-sm opacity-80 mb-1">
+              {el.location}
+            </p>
+          )}
+
+          {/* Description */}
+          {el.description && (
+            <p class="mt-2">
+              {el.description}
+            </p>
+          )}
+        </div>
+
+        {/* Bottom connector (except for last) */}
+        {index !== elements.length - 1 && <hr />}
+      </li>
+    )
+  })}
 </ul>
