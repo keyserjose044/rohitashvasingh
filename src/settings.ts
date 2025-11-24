@@ -1,6 +1,6 @@
 export const profile = {
-  fullName: 'Dr. Rohitashva K. Singh',
-  title: 'Structural Engineer · PhD in Civil Engineering',
+  fullName: 'Rohitashva K. Singh',
+  title: 'Dr.',
   institute: 'The University of Texas at Arlington, USA (2021–2025)',
   author_name: 'Rohitashva K. Singh', // Highlighted in papers section
   research_areas: [
@@ -33,15 +33,15 @@ export const profile = {
 
 // Set equal to an empty string to hide the icon that you don't want to display
 export const social = {
-  email: '', // you can add later, e.g. 'mailto:rohitashvasingh@...'
+  email: 'mailto:rohitashva.xlr8@gmail.com', // you can add later, e.g. 'mailto:rohitashvasingh@...'
   linkedin: 'https://www.linkedin.com/in/rohitashvasingh/',
-  x: '', // set to '' to hide for now, or add his handle URL
+  x: 'https://x.com/hitromarku', // set to '' to hide for now, or add his handle URL
   github: '',
   gitlab: '',
-  scholar: '', // add Google Scholar URL when you have it
+  scholar: 'https://scholar.google.com/citations?user=4YWjnXIAAAAJ&hl=en', // add Google Scholar URL when you have it
   inspire: '',
   arxiv: '',
-  orcid: '',
+  orcid: 'https://orcid.org/0009-0001-1583-9445',
 };
 
 export const template = {
@@ -56,7 +56,7 @@ export const template = {
 };
 
 export const seo = {
-  default_title: 'Dr. Rohitashva K. Singh — Concrete Materials & Structural Engineer',
+  default_title: 'Dr. Rohitashva K. Singh',
   default_description:
     'Portfolio of Dr. Rohitashva K. Singh, materials and structural engineer specializing in nano-reinforced cementitious composites, sustainable concrete, and durability.',
   default_image: '/images/astro-academia.png', // update later with a custom OG image
